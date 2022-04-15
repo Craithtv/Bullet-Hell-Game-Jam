@@ -1,43 +1,40 @@
 fileFormatVersion: 2
-guid: fdd32abf08205c74682467831e7e63fb
+guid: 5e7beb51d201ba446b4febfdd44cc007
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8832443635159040951
-    second: 1SingleExport_0
+      213: -5322446642928401900
+    second: building_tile_set_0
   - first:
-      213: 6981270335027606232
-    second: 1SingleExport_1
+      213: 4284227603289185962
+    second: building_tile_set_1
   - first:
-      213: -3658583046907289511
-    second: 1SingleExport_2
+      213: -6179532300223769112
+    second: building_tile_set_2
   - first:
-      213: 8040319730046010868
-    second: 1SingleExport_3
+      213: 6078157502539467160
+    second: building_tile_set_3
   - first:
-      213: -6377090493628307469
-    second: 1SingleExport_4
+      213: 4430506183968725840
+    second: building_tile_set_4
   - first:
-      213: 8367609018055553248
-    second: 1SingleExport_5
+      213: 5519021992930320796
+    second: building_tile_set_5
   - first:
-      213: 1679024448174583299
-    second: 1SingleExport_6
+      213: -6116942265509589072
+    second: building_tile_set_6
   - first:
-      213: 6284954516032305024
-    second: 1SingleExport_7
+      213: 5048849753173886003
+    second: building_tile_set_7
   - first:
-      213: 2343632487408674104
-    second: 1SingleExport_8
+      213: -6897614942883622947
+    second: building_tile_set_8
   - first:
-      213: 3573462704871892244
-    second: 1SingleExport_9
+      213: 5109335028339806364
+    second: building_tile_set_9
   - first:
-      213: -5796405526728601460
-    second: 1SingleExport_10
-  - first:
-      213: -7260909024917230823
-    second: 1SingleExport_11
+      213: 192975210691573033
+    second: building_tile_set_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -104,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,43 +113,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -163,253 +124,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1SingleExport_0
+      name: building_tile_set_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 57
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 39
+        y: 82
+        width: 7
+        height: 32
+      alignment: 9
+      pivot: {x: 2.2857144, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94c7fa36f4bdc6580800000000000000
-      internalID: -8832443635159040951
+      spriteID: 41248405afed226b0800000000000000
+      internalID: -5322446642928401900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1SingleExport_1
+      name: building_tile_set_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 82
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae99fe6e42a47b30800000000000000
+      internalID: 4284227603289185962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tile_set_2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 48
+        width: 7
+        height: 32
+      alignment: 9
+      pivot: {x: 2.2857144, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e51c1f0d14ed3aa0800000000000000
+      internalID: -6179532300223769112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tile_set_3
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 48
+        width: 7
+        height: 32
+      alignment: 9
+      pivot: {x: 2.2857144, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8998dbb8b04f95450800000000000000
+      internalID: 6078157502539467160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tile_set_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b90a686e15c7d30800000000000000
+      internalID: 4430506183968725840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tile_set_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 40
+        width: 32
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: -2.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c912e24f241879c40800000000000000
+      internalID: 5519021992930320796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tile_set_6
       rect:
         serializedVersion: 2
         x: 16
-        y: 57
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 26
+        width: 7
+        height: 6
+      alignment: 9
+      pivot: {x: 1.5, y: 1.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d2fa40a16472e060800000000000000
-      internalID: 6981270335027606232
+      spriteID: 0bf4ab02b614c1ba0800000000000000
+      internalID: -6116942265509589072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1SingleExport_2
+      name: building_tile_set_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 57
-        width: 16
-        height: 19
+        x: 25
+        y: 26
+        width: 7
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95023d35a1a1a3dc0800000000000000
-      internalID: -3658583046907289511
+      spriteID: 3348f3eb91e111640800000000000000
+      internalID: 5048849753173886003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1SingleExport_3
+      name: building_tile_set_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 38
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 31
+        width: 32
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: -2.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f505fde134f49f60800000000000000
-      internalID: 8040319730046010868
+      spriteID: ddfcefb21cfb640a0800000000000000
+      internalID: -6897614942883622947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1SingleExport_4
+      name: building_tile_set_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 38
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 23
+        width: 32
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: -2.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f7a3cabbf50087a0800000000000000
-      internalID: -6377090493628307469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1SingleExport_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 38
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e07e848118bf1470800000000000000
-      internalID: 8367609018055553248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1SingleExport_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 19
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30e64aaf6d71d4710800000000000000
-      internalID: 1679024448174583299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1SingleExport_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 19
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 087b79d45d4a83750800000000000000
-      internalID: 6284954516032305024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1SingleExport_8
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 19
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8352f088451468020800000000000000
-      internalID: 2343632487408674104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1SingleExport_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 415eef5a56d779130800000000000000
-      internalID: 3573462704871892244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1SingleExport_10
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c801b3552e70f8fa0800000000000000
-      internalID: -5796405526728601460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1SingleExport_11
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91b616736b11c3b90800000000000000
-      internalID: -7260909024917230823
+      spriteID: c9097aa432108e640800000000000000
+      internalID: 5109335028339806364
       vertices: []
       indices: 
       edges: []

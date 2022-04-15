@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float rotation;
 
+    public LayerMask wallLayers;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +21,14 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(velocity * speed * Time.deltaTime);
+
+        DestroyBullet();
+    }
+
+    void DestroyBullet()
+    {
+        if(Physics2D.OverlapArea(gameObject.GetComponent<CircleCollider2D>().bounds.max, gameObject.GetComponent<CircleCollider2D>().bounds.min, wallLayers)){
+            Destroy(gameObject);
+        }
     }
 }
