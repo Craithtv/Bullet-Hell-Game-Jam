@@ -6,9 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
 
+    [SerializeField] private LayerMask wallLayers;
     [SerializeField] private Camera mainCamera;
     private Vector3 mousePos;
     private SpriteRenderer playerSprite;
+
+
 
     private void Start()
     {
@@ -16,11 +19,22 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position += new Vector3(Input. GetAxisRaw("Horizontal"), Input. GetAxisRaw("Vertical")) * speed * Time.deltaTime;
+
+        //Currently stops player from sliding after being knocked around by Enemy (may be unnecessary if we have enemy ignore collision with player)
+        //Solution attempt to prevent player from moving when walking into a wall
+        //if(Physics2D.OverlapArea(gameObject.GetComponent<BoxCollider2D>().bounds.max, gameObject.GetComponent<BoxCollider2D>().bounds.min, wallLayers)){
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        //}
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime;
         //GetAxisRaw disables ease in
+        
 
         mousePos = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
 
@@ -39,9 +53,5 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSprite.flipY = false;
         }
-
-
-        
-
     }
 }
