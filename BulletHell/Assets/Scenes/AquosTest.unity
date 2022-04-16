@@ -381,7 +381,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &433771211
 BoxCollider2D:
@@ -473,9 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  wallLayers:
-    serializedVersion: 2
-    m_Bits: 64
+  dashSpeed: {x: 20, y: 20}
   mainCamera: {fileID: 1533180989}
 --- !u!114 &433771214
 MonoBehaviour:
