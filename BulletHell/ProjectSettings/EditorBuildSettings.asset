@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: cdfdf6fc14f9b4e489111a280ec63de1
+  - enabled: 1
     path: Assets/Scenes/BulletSpawnTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/AquosTest.unity
+    guid: 3ba98bc7fe5de7042b7012f0774d64fc
   m_configObjects: {}
