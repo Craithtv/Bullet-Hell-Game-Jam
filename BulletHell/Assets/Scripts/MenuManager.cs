@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    
+    private bool menuOpen = false;
    public Canvas quitButtonMenu;
    public Canvas settingsButtonMenu;
    public Canvas pauseButtonMenu;
@@ -18,6 +19,26 @@ public class MenuManager : MonoBehaviour
        pauseButtonMenu.GetComponent<Canvas> ().enabled = false;
        quitButtonMenu.GetComponent<Canvas> ().enabled = false;
        Time.timeScale = 1;
+   }
+
+   public void Update()
+   {
+       if (Input.GetKeyDown(KeyCode.Escape) && menuOpen == false)
+        {
+            Time.timeScale = 0;
+            pauseButtonMenu.GetComponent<Canvas>().enabled = true;   
+            menuOpen = true;
+            Debug.Log("Key Detected");
+        }
+    else if(Input.GetKeyDown(KeyCode.Escape) && menuOpen == true)
+        {
+            Time.timeScale = 1;
+            pauseButtonMenu.GetComponent<Canvas>().enabled = false;
+           
+            menuOpen = false;
+        }
+
+       
    }
    
    
@@ -44,9 +65,19 @@ public class MenuManager : MonoBehaviour
         settingsButtonMenu.GetComponent<Canvas> ().enabled = true;
     }
 
+    public void OnSettingsBackButton()
+    {
+        settingsButtonMenu.GetComponent<Canvas> ().enabled = false;
+    }
+
     public void OnFirstQuitButton()
     {
         quitButtonMenu.GetComponent<Canvas> ().enabled = true;
+    }
+
+    public void OnQuitConfirmBackButton()
+    {
+        quitButtonMenu.GetComponent<Canvas> ().enabled = false;
     }
     
     public void OnBackButton()
