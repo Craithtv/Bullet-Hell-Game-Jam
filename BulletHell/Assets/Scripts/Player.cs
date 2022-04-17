@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         {
             obj.SetActive(false);
         }
-        healthBar[0].SetActive(true);
+        //healthBar[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
             bulletTimer = bulletCooldown;
         }
 
-        if (hp == 6)
+        /*if (hp == 6)
         {  
             healthBar[0].SetActive(true);
             healthBar[1].SetActive(false);
@@ -107,7 +107,12 @@ public class Player : MonoBehaviour
             healthBar[4].SetActive(false);
             healthBar[5].SetActive(false);
             healthBar[6].SetActive(true);
-        }
+        }*/
         
+    }
+
+    public int GetPlayerHp()
+    {
+        return hp;
     }
 }
