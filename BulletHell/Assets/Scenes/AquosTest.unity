@@ -473,7 +473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  dashSpeed: {x: 20, y: 20}
   mainCamera: {fileID: 1533180989}
 --- !u!114 &433771214
 MonoBehaviour:

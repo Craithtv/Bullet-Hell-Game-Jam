@@ -5,7 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    public Vector2 dashSpeed;
+    float baseSpeed;
+    float dashSpeed;
+    float dashCooldown;
+    bool canRoll;
+
+    enum PlayerState
+    {
+        Walk,
+        Dash
+    };
+
+    private PlayerState playerState;
 
     [SerializeField] private Camera mainCamera;
     private Vector3 mousePos;
@@ -17,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     {
         playerSprite = GetComponent<SpriteRenderer>();
         player = GetComponent<Rigidbody2D>();
+        baseSpeed = speed;
+        dashSpeed = speed * 5;
+        playerState = PlayerState.Walk;
     }
 
     private void Update()
@@ -24,10 +38,33 @@ public class PlayerMovement : MonoBehaviour
 
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-        //Dash code, not working yet
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(player.velocity.x * 30, player.velocity.y * 30), ForceMode2D.Impulse);
+            playerState = PlayerState.Dash;
+        }
+        else
+        {
+            playerState = PlayerState.Walk;
+        }
+
+        //Scuffed dash code
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0)
+        {
+            speed *= 5;
+            dashCooldown = 0.5f;
+        }
+
+        if(dashCooldown > 0)
+        {
+            dashCooldown -= Time.deltaTime;
+        }
+    if(speed > baseSpeed)
+        {
+            speed -= 100 * Time.deltaTime;
+        }
+        else
+        {
+            speed = baseSpeed;
         }
 
     }
@@ -56,4 +93,5 @@ public class PlayerMovement : MonoBehaviour
             playerSprite.flipX = false;
         }
     }
+
 }
