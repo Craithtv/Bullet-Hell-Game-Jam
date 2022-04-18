@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: cdfdf6fc14f9b4e489111a280ec63de1
   - enabled: 1
+    path: Assets/Scenes/CraithTest.unity
+    guid: dbe9c3351e5098d48a6df1100fbe8ed5
+  - enabled: 1
     path: Assets/Scenes/BulletSpawnTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1

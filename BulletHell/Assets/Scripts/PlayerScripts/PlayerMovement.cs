@@ -84,14 +84,14 @@ public class PlayerMovement : MonoBehaviour
         
 
         //Flips the sprite on X-axis when mouse is on the left side of player
-        if (difference.x < 0)
-        {
-            playerSprite.flipX = true;
-        }
-        else
-        {
-            playerSprite.flipX = false;
-        }
+        //if (difference.x < 0)
+        //{
+        //    playerSprite.flipX = true;
+       // }
+       // else
+       // {
+        //    playerSprite.flipX = false;
+       // }
     }
 
 }
