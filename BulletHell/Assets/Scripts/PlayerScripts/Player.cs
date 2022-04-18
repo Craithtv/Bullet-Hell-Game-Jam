@@ -117,4 +117,9 @@ public class Player : MonoBehaviour
         }
         
     }
+
+    public int GetPlayerHp()
+    {
+        return hp;
+    }
 }
