@@ -36,6 +36,13 @@ public class Player : MonoBehaviour
             hp -= 1;
             Debug.Log("Hit");
             bulletTimer = bulletCooldown;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.tag == "Health" && hp <=5)
+        {
+            hp++;
+            Destroy(collision.gameObject);
         }
 
         if (hp == 6)
