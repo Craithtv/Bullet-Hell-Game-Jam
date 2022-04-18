@@ -6,7 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     public int enemystartHp;
     int enemyHp;
-
+    public GameObject healthPickUp;
+    const float dropChance = 1f / 5f;
 
 
     // Start is called before the first frame update
@@ -18,8 +19,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyHp <= 0)
+        if(enemyHp <= 0 && (Random.Range(0f , 1f) <= dropChance))
         {
+
+            Instantiate(healthPickUp, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

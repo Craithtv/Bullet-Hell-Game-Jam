@@ -38,6 +38,12 @@ public class Player : MonoBehaviour
             bulletTimer = bulletCooldown;
         }
 
+        if (collision.tag == "Health" && hp <=5)
+        {
+            hp++;
+            Destroy(collision.gameObject);
+        }
+
         if (hp == 6)
         {  
             healthBar[0].SetActive(true);
