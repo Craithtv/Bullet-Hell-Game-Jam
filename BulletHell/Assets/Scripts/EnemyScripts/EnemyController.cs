@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Bullet")
+        if (collision.tag == "PlayerBullet")
         {
             enemyHp -= 1;
             Debug.Log("EnemyHit");
