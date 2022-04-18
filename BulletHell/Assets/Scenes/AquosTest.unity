@@ -522,6 +522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  wallLayers:
+    serializedVersion: 2
+    m_Bits: 64
   mainCamera: {fileID: 1533180989}
 --- !u!114 &433771214
 MonoBehaviour:
@@ -535,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f21fd05e66a304a8ba997dca19f41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHp: 6
+  startHp: 10
   bulletCooldown: 0.2
   healthBar: []
 --- !u!58 &433771215
