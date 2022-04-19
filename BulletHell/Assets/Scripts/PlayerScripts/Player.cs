@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     float bulletTimer;
     public Canvas youDiedScreen;
 
+    bool rageActive;
+    int rageCounter;
+    float rageTimer;
+
     public GameObject [] healthBar;
 
     
@@ -20,6 +24,9 @@ public class Player : MonoBehaviour
         youDiedScreen.GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1;
         hp = startHp;
+
+        rageCounter = 0;
+        rageActive = false;
 
         foreach(GameObject obj in healthBar)
         {
@@ -32,6 +39,25 @@ public class Player : MonoBehaviour
     void Update()
     {
         bulletTimer -= Time.deltaTime;
+
+        if(rageCounter >= 3 && Input.GetKeyDown(KeyCode.E))
+        {
+            rageCounter = 0;
+            rageTimer = 10f;
+            rageActive = true;
+        }
+
+        if(rageActive == true)
+        {
+            if(rageTimer > 0)
+            {
+                rageTimer -= Time.deltaTime;
+            }
+            else
+            {
+                rageActive = false;
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -39,6 +65,10 @@ public class Player : MonoBehaviour
         if (collision.tag == "Bullet" && bulletTimer <=0)
         {
             hp -= 1;
+
+            if (rageActive == false)
+                rageCounter += 1;
+
             Debug.Log("Hit");
             bulletTimer = bulletCooldown;
             Destroy(collision.gameObject);
@@ -132,5 +162,10 @@ public class Player : MonoBehaviour
     public int GetPlayerHp()
     {
         return hp;
+    }
+
+    public bool GetRage()
+    {
+        return rageActive;
     }
 }
