@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     public GameObject [] healthBar;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,9 @@ public class Player : MonoBehaviour
             Debug.Log("Hit");
             bulletTimer = bulletCooldown;
             Destroy(collision.gameObject);
+
+
+
         }
 
         if (collision.tag == "Health" && hp <=5)
