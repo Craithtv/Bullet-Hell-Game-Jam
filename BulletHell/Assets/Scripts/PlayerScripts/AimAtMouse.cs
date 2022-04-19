@@ -6,14 +6,16 @@ public class AimAtMouse : MonoBehaviour
 {
 
     Vector3 mousePos;
+    Vector2 direction;
     public GameObject player;
-    public float objDistFromPlayer;
+    float objDistFromPlayer;
     [SerializeField] private Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         gameObject.transform.position = player.transform.position;
+        objDistFromPlayer = player.GetComponent<AttackTest>().GetAttackRange();
     }
 
     // Update is called once per frame
@@ -26,9 +28,14 @@ public class AimAtMouse : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 
         float distance = difference.magnitude;
-        Vector2 direction = difference / distance;
+        direction = difference / distance;
         direction.Normalize();
 
         gameObject.transform.position = player.transform.position + new Vector3(direction.x, direction.y) * objDistFromPlayer;
+    }
+
+    public Vector2 GetDirection()
+    {
+        return direction;
     }
 }

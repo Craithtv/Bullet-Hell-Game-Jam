@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 433771208}
+  objDistFromPlayer: 0
   mainCamera: {fileID: 1533180989}
 --- !u!1 &433771208
 GameObject:
@@ -599,13 +600,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 433771208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 241c8aa12e503aa4c95cebdb49cc8336, type: 3}
+  m_Script: {fileID: 11500000, guid: d5e4226664761c84c9d7ff81584ab4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  speed: 2
   mainCamera: {fileID: 1533180989}
 --- !u!114 &433771214
 MonoBehaviour:
@@ -621,6 +619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHp: 6
   bulletCooldown: 0.2
+  youDiedScreen: {fileID: 2498638958845253911, guid: 1ea4bcfd3395a1047b6a8b4b334c1c19, type: 3}
   healthBar:
   - {fileID: 985222942}
   - {fileID: 1287918412}
