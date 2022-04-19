@@ -7,6 +7,7 @@ public class AnimTest : MonoBehaviour
     public SpriteRenderer sprites;
     public Sprite [] directionSprites;
     public Animator anim;
+    public bool isRaging = false;
     
     // Start is called before the first frame update
     void Start()
@@ -17,32 +18,45 @@ public class AnimTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+   
+
+        if (Input.GetKey(KeyCode.A))
         {
-            sprites.sprite = directionSprites[0];
-        }  
+            anim.Play("leftrunPC");
+        }
         else if (Input.GetKey(KeyCode.D))
         {
-            sprites.sprite = directionSprites[1];
+            anim.Play("rightrunPC");
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            sprites.sprite = directionSprites[2];
+            anim.Play("uprunPC");
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.S))
         {
-            sprites.sprite = directionSprites[3];
+            anim.Play("downrunPC");
         }
+
+
+
 
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            anim.Play("leftrunPC");
+            sprites.sprite = directionSprites[3];
+            
         }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            anim.Play("rightrunPC");
-        }
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

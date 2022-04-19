@@ -8,12 +8,15 @@ public class Player : MonoBehaviour
     int hp;
     public float bulletCooldown;
     float bulletTimer;
+    public Canvas youDiedScreen;
 
     public GameObject [] healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        youDiedScreen.GetComponent<Canvas>().enabled = false;
+        Time.timeScale = 1;
         hp = startHp;
 
         foreach(GameObject obj in healthBar)
@@ -106,7 +109,10 @@ public class Player : MonoBehaviour
             healthBar[6].SetActive(false);
         }
         else if (hp == 0)
-        {  
+        {
+            youDiedScreen.GetComponent<Canvas>().enabled = true;
+            Time.timeScale = 0;
+
             healthBar[0].SetActive(false);
             healthBar[1].SetActive(false);
             healthBar[2].SetActive(false);

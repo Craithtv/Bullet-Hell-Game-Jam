@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int enemystartHp;
-    int enemyHp;
+    public int enemyHp;
     public GameObject healthPickUp;
     const float dropChance = 1f / 5f;
 

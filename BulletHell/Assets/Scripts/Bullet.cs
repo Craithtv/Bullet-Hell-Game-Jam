@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     void DestroyBullet()
     {
-        if(Physics2D.OverlapArea(gameObject.GetComponent<CircleCollider2D>().bounds.max, gameObject.GetComponent<CircleCollider2D>().bounds.min, wallLayers)){
+        if(Physics2D.OverlapArea(gameObject.GetComponent<BoxCollider2D>().bounds.max, gameObject.GetComponent<BoxCollider2D>().bounds.min, wallLayers)){
             Destroy(gameObject);
         }
     }
