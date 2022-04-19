@@ -8,16 +8,18 @@ public class EnemyController : MonoBehaviour
     public int enemyHp;
     public GameObject healthPickUp;
     const float dropChance = 1f / 5f;
+    public Bullet bulletScript;
 
 
     // Start is called before the first frame update
     void Start()
     {
         enemyHp = enemystartHp;
+       
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(enemyHp <= 0 && (Random.Range(0f , 1f) <= dropChance))
         {
@@ -32,7 +34,12 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "PlayerBullet")
         {
-            enemyHp -= 1;
+
+
+
+            bulletScript = GameObject.Find("PlayerBullet(Clone)").GetComponent<Bullet>();
+
+            enemyHp -= bulletScript.playerBulletDamage;
             Debug.Log("EnemyHit");
             Destroy(collision.gameObject);
             

@@ -49,6 +49,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   speed: 5
   rotation: 180
+  playerBulletDamage: 8
   wallLayers:
     serializedVersion: 2
     m_Bits: 64

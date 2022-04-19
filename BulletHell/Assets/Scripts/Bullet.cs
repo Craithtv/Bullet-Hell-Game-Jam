@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public Vector2 velocity;
     public float speed;
     public float rotation;
+    public int playerBulletDamage;
 
     public LayerMask wallLayers;
 
