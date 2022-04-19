@@ -7,6 +7,7 @@ public class AimAtMouse : MonoBehaviour
 
     Vector3 mousePos;
     public GameObject player;
+    public float objDistFromPlayer;
     [SerializeField] private Camera mainCamera;
 
     // Start is called before the first frame update
@@ -28,6 +29,6 @@ public class AimAtMouse : MonoBehaviour
         Vector2 direction = difference / distance;
         direction.Normalize();
 
-        gameObject.transform.position = player.transform.position + new Vector3(direction.x * 1.5f, direction.y * 1.5f);
+        gameObject.transform.position = player.transform.position + new Vector3(direction.x, direction.y) * objDistFromPlayer;
     }
 }
