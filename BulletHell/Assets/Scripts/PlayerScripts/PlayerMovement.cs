@@ -6,13 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     float baseSpeed;
-    float dashSpeed;
     float dashCooldown;
-    bool canRoll;
+
+    BoxCollider2D coll;
+    GameObject[] bullets;
+
+    [SerializeField] private LayerMask wallLayer;
+    public float distFromWall;
+
+    Vector3 dir;
+
+    Vector3 playerDir;
 
     enum PlayerState
     {
-        Walk,
+        Normal,
         Dash
     };
 
@@ -21,77 +29,69 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     private Vector3 mousePos;
     private SpriteRenderer playerSprite;
-    private Rigidbody2D player;
 
 
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
-        player = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
         baseSpeed = speed;
-        dashSpeed = speed * 5;
-        playerState = PlayerState.Walk;
+        playerState = PlayerState.Normal;
     }
 
     private void Update()
     {
 
+        dir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0 && CanMove())
         {
+            speed *= 5f;
+            dashCooldown = 0.5f;
             playerState = PlayerState.Dash;
         }
-        else
-        {
-            playerState = PlayerState.Walk;
-        }
 
-        //Scuffed dash code
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0)
+
+        if (playerState == PlayerState.Dash)
         {
-            speed *= 5;
-            dashCooldown = 0.5f;
+            bullets = GameObject.FindGameObjectsWithTag("Bullet");
+
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                Physics2D.IgnoreCollision(coll, bullets[i].GetComponent<BoxCollider2D>());
+            }
+
+            transform.position += dir * speed * Time.deltaTime;
+            speed -= speed * 10f * Time.deltaTime;
+
+            if (speed < baseSpeed)
+            {
+                playerState = PlayerState.Normal;
+                speed = baseSpeed;
+            }
         }
 
         if (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
         }
-        if (speed > baseSpeed)
-        {
-            speed -= 100 * Time.deltaTime;
-        }
-        else
-        {
-            speed = baseSpeed;
-        }
 
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime;
-        //GetAxisRaw disables ease in
+        if (playerState == PlayerState.Normal)
+            transform.position += dir * speed * Time.deltaTime;
+    }
 
-
-
-        mousePos = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
-
-        //Find where the mouse is relative to player position then rotate player
-        Vector3 difference = mousePos - gameObject.transform.position;
-
-
-        //Flips the sprite on X-axis when mouse is on the left side of player
-        //if (difference.x < 0)
-       // {
-         //   playerSprite.flipX = true;
-       // }
-      //  else
-       // {
-       //     playerSprite.flipX = false;
-       // }
+    //Check if there is a wall in front of player
+    //Distance may need to be adjusted based on player/collider size
+    bool CanMove()
+    {
+        return Physics2D.Raycast(transform.position, dir, distFromWall, wallLayer).collider == null;
     }
 
 }
