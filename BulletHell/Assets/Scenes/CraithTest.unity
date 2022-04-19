@@ -2808,7 +2808,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159953502}
   m_BodyType: 2
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -4300,6 +4300,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   damage: 1
+  playerBulletPrefab: {fileID: 3903575978579955577, guid: f7019a0ba41c4ef409265f52ccd86786, type: 3}
 --- !u!1 &1534162471
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
         {
             enemyHp -= 1;
             Debug.Log("EnemyHit");
+            Destroy(collision.gameObject);
             
         }
     }
