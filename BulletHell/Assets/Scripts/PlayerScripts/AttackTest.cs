@@ -25,38 +25,48 @@ public class AttackTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (meleeTimeBtwAttack <= 0)
-        {//then you can attack
-            if (Input.GetMouseButton(0))
-            {
-                meleeTimeBtwAttack = startTimeBtwAttack;
-                enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
+
+        //Rage inactive, use melee
+        if(GetComponent<Player>().GetRage() == false)
+        {
+            if (meleeTimeBtwAttack <= 0)
+            {//then you can attack
+                if (Input.GetMouseButton(0))
                 {
-                    enemiesToDamage[i].GetComponent<EnemyController>().enemyHp -= damage;
+                    meleeTimeBtwAttack = startTimeBtwAttack;
+                    enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+                    for (int i = 0; i < enemiesToDamage.Length; i++)
+                    {
+                        enemiesToDamage[i].GetComponent<EnemyController>().enemyHp -= damage;
+                    }
+
                 }
 
             }
-
-        }
-        else
-        {
-            meleeTimeBtwAttack -= Time.deltaTime;
-        }
-
-        if(rangedTimeBtwAttack <= 0)
-        {
-            if (Input.GetMouseButton(1))
+            else
             {
-                rangedTimeBtwAttack = startTimeBtwAttack;
-                GameObject playerBullet = Instantiate(playerBulletPrefab, transform.position, Quaternion.Euler(Vector3.zero));
-                playerBullet.GetComponent<Bullet>().velocity = -attackPos.GetComponent<AimAtMouse>().GetDirection();
+                meleeTimeBtwAttack -= Time.deltaTime;
             }
         }
+
+        //Rage active, use range
         else
         {
-            rangedTimeBtwAttack -= Time.deltaTime;
+            if (rangedTimeBtwAttack <= 0)
+            {
+                if (Input.GetMouseButton(1))
+                {
+                    rangedTimeBtwAttack = startTimeBtwAttack;
+                    GameObject playerBullet = Instantiate(playerBulletPrefab, transform.position, Quaternion.Euler(Vector3.zero));
+                    playerBullet.GetComponent<Bullet>().velocity = -attackPos.GetComponent<AimAtMouse>().GetDirection();
+                }
+            }
+            else
+            {
+                rangedTimeBtwAttack -= Time.deltaTime;
+            }
         }
+        
     }
 
     void OnDrawGizmosSelected()

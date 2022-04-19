@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     float baseSpeed;
+    float rageSpeed;
     float dashCooldown;
 
     BoxCollider2D coll;
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
         Dash
     };
 
+    bool inRage;
+
     private PlayerState playerState;
 
     [SerializeField] private Camera mainCamera;
@@ -37,10 +40,12 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         baseSpeed = speed;
         playerState = PlayerState.Normal;
+        rageSpeed = speed * 2;
     }
 
     private void Update()
     {
+        inRage = GetComponent<Player>().GetRage();
 
         dir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
@@ -49,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0 && CanMove())
         {
-            speed *= 5f;
+            speed *= 10f;
             dashCooldown = 0.5f;
             playerState = PlayerState.Dash;
         }

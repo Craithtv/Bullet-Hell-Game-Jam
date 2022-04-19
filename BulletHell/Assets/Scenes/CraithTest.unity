@@ -2808,7 +2808,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159953502}
   m_BodyType: 2
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -4143,6 +4143,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  distFromWall: 0.75
   mainCamera: {fileID: 1184382935}
 --- !u!50 &1515139260
 Rigidbody2D:
@@ -4164,7 +4168,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!212 &1515139261
 SpriteRenderer:
   m_ObjectHideFlags: 0
