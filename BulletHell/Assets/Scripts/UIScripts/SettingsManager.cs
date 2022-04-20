@@ -9,49 +9,49 @@ public class SettingsManager : MonoBehaviour
     public AudioMixer masterAudioMixer;
     public AudioMixer bgmAudioMixer;
     public AudioMixer sfxAudioMixer;
-    public Dropdown resolutionDropdown;
-    Resolution[] resolutions;
+    //public Dropdown resolutionDropdown;
+   // Resolution[] resolutions;
 
     //seeing what resolutions are available
-    private void Start()
-    {
-        resolutions = Screen.resolutions;
+   // private void Start()
+    //{
+        //resolutions = Screen.resolutions;
 
         //clears default list options
-        resolutionDropdown.ClearOptions();
+        //resolutionDropdown.ClearOptions();
 
 
         //converting array into string
-        List<string> options = new List<string>();
+       // List<string> options = new List<string>();
 
-        int currentResolutionsIndex = 0;
+        //int currentResolutionsIndex = 0;
         //loop through each element in array
-        for (int i = 0; i < resolutions.Length; i++)
-        {
+       // for (int i = 0; i < resolutions.Length; i++)
+       // {
             //creates string that displays resolution
-            string option = resolutions[i].width + "x" + resolutions[i].height;
+            //string option = resolutions[i].width + "x" + resolutions[i].height;
             //adds string to options
-            options.Add(option);
+           // options.Add(option);
 
             //sets dropdown to default resolution
-            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionsIndex = i;
-            }
-        }
+            //if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+           // {
+            //    currentResolutionsIndex = i;
+            //}
+       //}
         //adds options to dropdown
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionsIndex;
-        resolutionDropdown.RefreshShownValue();
-    }
+       // resolutionDropdown.AddOptions(options);
+       // resolutionDropdown.value = currentResolutionsIndex;
+        //resolutionDropdown.RefreshShownValue();
+   // }
 
 
-    public void SetResolution (int resolutionIndex)
-    {
+    //public void SetResolution (int resolutionIndex)
+    //{
         //updates resolution from dropdown
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+       // Resolution resolution = resolutions[resolutionIndex];
+        //Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+   // }
 
 
     //audio slider
@@ -71,10 +71,10 @@ public class SettingsManager : MonoBehaviour
 
 
     //quality dropdown
-    public void SetQuality (int qualityIndex)
-    {
-        QualitySettings.SetQualityLevel(qualityIndex);
-    }
+    //public void SetQuality (int qualityIndex)
+    //{
+       // QualitySettings.SetQualityLevel(qualityIndex);
+    //}
 
     public void SetFullScreen (bool isFullscreen)
     {

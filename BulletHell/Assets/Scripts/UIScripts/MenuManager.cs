@@ -34,7 +34,10 @@ public class MenuManager : MonoBehaviour
         {
             Time.timeScale = 1;
             pauseButtonMenu.GetComponent<Canvas>().enabled = false;
+            settingsButtonMenu.GetComponent<Canvas>().enabled = false;
+            quitButtonMenu.GetComponent<Canvas>().enabled = false;
            
+
             menuOpen = false;
         }
 
@@ -63,27 +66,34 @@ public class MenuManager : MonoBehaviour
     public void OnSettingsButton()
     {
         settingsButtonMenu.GetComponent<Canvas> ().enabled = true;
+        pauseButtonMenu.GetComponent<Canvas>().enabled = false;
     }
 
     public void OnSettingsBackButton()
     {
         settingsButtonMenu.GetComponent<Canvas> ().enabled = false;
+        pauseButtonMenu.GetComponent<Canvas>().enabled = true;
     }
 
     public void OnFirstQuitButton()
     {
         quitButtonMenu.GetComponent<Canvas> ().enabled = true;
+        pauseButtonMenu.GetComponent<Canvas>().enabled = false;
+
     }
 
     public void OnQuitConfirmBackButton()
     {
         quitButtonMenu.GetComponent<Canvas> ().enabled = false;
+        pauseButtonMenu.GetComponent<Canvas>().enabled = true;
     }
     
     public void OnBackButton()
     {
         SceneManager.LoadScene(0); 
     }
+
+
     
     public void OnMainMenuButton()
     {
