@@ -74,7 +74,12 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
 
 
+        }
 
+        if (collision.tag == "UnlockedDoor")
+        {
+           
+            Destroy(collision.gameObject);
         }
 
         if (collision.tag == "Health" && hp <=5)

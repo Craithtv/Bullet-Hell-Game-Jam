@@ -7,24 +7,40 @@ public class EnemyController : MonoBehaviour
     public int enemystartHp;
     public int enemyHp;
     public GameObject healthPickUp;
-    const float dropChance = 1f / 5f;
+    const float dropChance = 1f / 2f;
     public Bullet bulletScript;
+
+
+    public GameObject door;
+    private Door doorScript;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         enemyHp = enemystartHp;
-       
+
+        
+        doorScript = door.GetComponent<Door>();
+
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(enemyHp <= 0 && (Random.Range(0f , 1f) <= dropChance))
         {
 
             Instantiate(healthPickUp, transform.position, Quaternion.identity);
+
+            doorScript.enemiesLeft--;
+
+            Destroy(gameObject);
+        }
+        else if(enemyHp <= 0)
+        {
+            doorScript.enemiesLeft--;
             Destroy(gameObject);
         }
     }
@@ -34,8 +50,6 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "PlayerBullet")
         {
-
-
 
             bulletScript = GameObject.Find("PlayerBullet(Clone)").GetComponent<Bullet>();
 

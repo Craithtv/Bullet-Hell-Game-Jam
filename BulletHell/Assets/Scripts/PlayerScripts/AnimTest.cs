@@ -53,6 +53,10 @@ public class AnimTest : MonoBehaviour
         {
             anim.Play("downrunRagePC");
         }
+        else
+        {
+            anim.Play("idlePC");
+        }
 
 
 

@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Health
   - PlayerBullet
+  - UnlockedDoor
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
