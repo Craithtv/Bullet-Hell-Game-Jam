@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     const float dropChance = 1f / 2f;
     Bullet bulletScript;
 
-
+    public Animator anim;
     public GameObject door;
     private Door doorScript;
 
@@ -20,8 +20,8 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         enemyHp = enemystartHp;
+        anim = gameObject.GetComponent<Animator>();
 
-        
         doorScript = door.GetComponent<Door>();
 
     }
@@ -50,10 +50,11 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "PlayerBullet")
         {
-
+           
             bulletScript = collision.GetComponent<Bullet>();
 
             enemyHp -= bulletScript.playerBulletDamage;
+            anim.CrossFadeInFixedTime("enemyDamage", 0);
             Debug.Log("EnemyHit");
 
             if(!bulletScript.GetLaserBool())

@@ -238,6 +238,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1382960953000693267, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 5280978612841177046, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -897,6 +901,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1152431045363390144, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 1e83b27429385bf40a641a6f264e18fe, type: 2}
+    - target: {fileID: 1152431045363390144, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2283272563928155616, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -951,7 +963,7 @@ PrefabInstance:
       objectReference: {fileID: 1452669006}
     - target: {fileID: 2283272563928155617, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
       propertyPath: enemystartHp
-      value: 3
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2283272563928155620, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
       propertyPath: target
@@ -969,7 +981,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5505814812275726264, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9941929f6d9ebc0419ddf09beef299d1, type: 2}
+    - target: {fileID: 5505814812275726264, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505814812275726264, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
+      propertyPath: m_CullingMode
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1152431045363390144, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
 --- !u!1001 &819322986
 PrefabInstance:

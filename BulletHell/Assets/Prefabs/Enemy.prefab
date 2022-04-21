@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2283272563928155616}
   - component: {fileID: 2283272563928155619}
+  - component: {fileID: 5505814812275726264}
+  - component: {fileID: 1152431045363390144}
   - component: {fileID: 2283272563928155618}
   - component: {fileID: 2283272563928155645}
   - component: {fileID: 2283272563928155617}
@@ -59,6 +61,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &5505814812275726264
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283272563928155644}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1152431045363390144
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283272563928155644}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1e83b27429385bf40a641a6f264e18fe, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 1e83b27429385bf40a641a6f264e18fe, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!212 &2283272563928155618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -151,7 +188,8 @@ MonoBehaviour:
   enemystartHp: 10
   enemyHp: 0
   healthPickUp: {fileID: 3641210640019967816, guid: 947c3ddecd6f45e4a8d9427bd14d1f57, type: 3}
-  bulletScript: {fileID: 3903575978579955582, guid: f7019a0ba41c4ef409265f52ccd86786, type: 3}
+  anim: {fileID: 5505814812275726264}
+  door: {fileID: 0}
 --- !u!114 &2283272563928155622
 MonoBehaviour:
   m_ObjectHideFlags: 0
