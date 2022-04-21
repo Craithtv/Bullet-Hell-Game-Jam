@@ -6,75 +6,55 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
-    public AudioMixer masterAudioMixer;
-    public AudioMixer bgmAudioMixer;
-    public AudioMixer sfxAudioMixer;
-    //public Dropdown resolutionDropdown;
-   // Resolution[] resolutions;
+    [SerializeField] string _volumeParameter = "MasterVolume";
+    [SerializeField] AudioMixer _mixer;
+    [SerializeField] Slider _slider;
+    [SerializeField] float _multiplier = 30f;
+    [SerializeField] private Toggle _toggle;
+    private bool _disableToggleEvent;
+    
 
-    //seeing what resolutions are available
-   // private void Start()
-    //{
-        //resolutions = Screen.resolutions;
-
-        //clears default list options
-        //resolutionDropdown.ClearOptions();
-
-
-        //converting array into string
-       // List<string> options = new List<string>();
-
-        //int currentResolutionsIndex = 0;
-        //loop through each element in array
-       // for (int i = 0; i < resolutions.Length; i++)
-       // {
-            //creates string that displays resolution
-            //string option = resolutions[i].width + "x" + resolutions[i].height;
-            //adds string to options
-           // options.Add(option);
-
-            //sets dropdown to default resolution
-            //if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-           // {
-            //    currentResolutionsIndex = i;
-            //}
-       //}
-        //adds options to dropdown
-       // resolutionDropdown.AddOptions(options);
-       // resolutionDropdown.value = currentResolutionsIndex;
-        //resolutionDropdown.RefreshShownValue();
-   // }
-
-
-    //public void SetResolution (int resolutionIndex)
-    //{
-        //updates resolution from dropdown
-       // Resolution resolution = resolutions[resolutionIndex];
-        //Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-   // }
-
-
-    //audio slider
-    public void SetMasterVolume (float volume)
+    private void Awake()
     {
-        masterAudioMixer.SetFloat("Volume", volume);     
-    }
-    public void SetSFXVolume (float volume)
-    {
-        sfxAudioMixer.SetFloat("Volume", volume);
+        _slider.onValueChanged.AddListener(HandleSliderValueChanged);
+       
+        _toggle.onValueChanged.AddListener(HandleToggleValueChanged);
     }
 
-    public void SetBGVolume (float volume)
+    private void OnDisable()
     {
-        bgmAudioMixer.SetFloat("Volume", volume);
+        PlayerPrefs.SetFloat(_volumeParameter, _slider.value);
     }
 
+    private void HandleToggleValueChanged(bool enableSound)
+    {
+        if (_disableToggleEvent)
+        {
+            return;
+        }
 
-    //quality dropdown
-    //public void SetQuality (int qualityIndex)
-    //{
-       // QualitySettings.SetQualityLevel(qualityIndex);
-    //}
+        if (enableSound)
+        {
+            _slider.value = _slider.maxValue;
+        }
+        else
+        {
+            _slider.value = _slider.minValue;
+        }
+    }
+
+    private void HandleSliderValueChanged(float value)
+    {
+        _mixer.SetFloat(_volumeParameter, value:Mathf.Log10(value) * _multiplier);
+        _disableToggleEvent = true;
+        _toggle.isOn = _slider.value > _slider.minValue;
+        _disableToggleEvent = false;
+    }
+
+    void Start()
+    {
+        _slider.value = PlayerPrefs.GetFloat(_volumeParameter, _slider.value);
+    }
 
     public void SetFullScreen (bool isFullscreen)
     {
