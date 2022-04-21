@@ -392,7 +392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280978613671345912, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
       propertyPath: m_MinValue
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5280978613671345912, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -424,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280978614199516104, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
       propertyPath: m_MinValue
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5280978614199516104, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
       propertyPath: m_WholeNumbers
@@ -444,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280978614440704929, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
       propertyPath: m_MinValue
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5280978614440704929, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
