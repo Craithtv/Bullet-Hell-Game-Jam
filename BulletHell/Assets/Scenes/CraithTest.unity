@@ -1157,6 +1157,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
+--- !u!114 &1073520238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3811512478198366127, guid: a96f086d09cf4ce4285c142720eaba71, type: 3}
+  m_PrefabInstance: {fileID: 3811512477797635425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1385ee0ed0d734491481ce1566dcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1184382933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184382933}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.135, z: -10}
+  m_LocalPosition: {x: -0.059999943, y: 0.13499999, z: -10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1515139258}
@@ -2336,10 +2347,22 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1184382935}
+    - target: {fileID: 2862172142035289623, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 2862172142035289709, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
       propertyPath: attackPos
       value: 
       objectReference: {fileID: 400796368}
+    - target: {fileID: 2862172142035289709, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
+      propertyPath: aimAtMouse
+      value: 
+      objectReference: {fileID: 1073520238}
+    - target: {fileID: 2862172142035289709, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
+      propertyPath: playerLaserPrefab
+      value: 
+      objectReference: {fileID: 6458527121342059521, guid: 7edb9fb043f50a648863d691c977eea5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
 --- !u!1001 &3142478078323844706

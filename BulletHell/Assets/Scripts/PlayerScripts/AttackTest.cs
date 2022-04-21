@@ -14,7 +14,10 @@ public class AttackTest : MonoBehaviour
     public int damage;
     Collider2D[] enemiesToDamage;
 
+    public AimAtMouse aimAtMouse;
     public GameObject playerBulletPrefab;
+    public GameObject playerLaserPrefab;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,11 +50,7 @@ public class AttackTest : MonoBehaviour
             {
                 meleeTimeBtwAttack -= Time.deltaTime;
             }
-        }
 
-        //Rage active, use range
-        else
-        {
             if (rangedTimeBtwAttack <= 0)
             {
                 if (Input.GetMouseButton(1))
@@ -65,6 +64,32 @@ public class AttackTest : MonoBehaviour
             {
                 rangedTimeBtwAttack -= Time.deltaTime;
             }
+        }
+
+        //Rage active, use range
+        else
+        {
+            
+            if (rangedTimeBtwAttack <= 0)
+            {
+                if (Input.GetMouseButton(1))
+                {
+                    RaycastHit2D rayHit = Physics2D.Raycast(transform.position, aimAtMouse.GetDirection(), Mathf.Infinity, GetComponent<PlayerMovement>().GetWallLayers());
+
+                    rangedTimeBtwAttack = startTimeBtwAttack;
+                    GameObject playerBullet = Instantiate(playerLaserPrefab, (transform.position + aimAtMouse.GetDirection() * rayHit.distance / 2), Quaternion.Euler(Vector3.zero));
+                    playerBullet.GetComponent<Bullet>().rotation = aimAtMouse.GetZRotation();
+                    
+                    playerBullet.transform.localScale = new Vector3(rayHit.distance, playerBullet.transform.localScale.y);
+                }
+            }
+
+            else
+            {
+                rangedTimeBtwAttack -= Time.deltaTime;
+            }
+
+            
         }
         
     }

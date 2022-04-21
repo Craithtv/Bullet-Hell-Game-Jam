@@ -9,6 +9,7 @@ public class AimAtMouse : MonoBehaviour
     Vector2 direction;
     public GameObject player;
     float objDistFromPlayer;
+    float rotationZ;
     [SerializeField] private Camera mainCamera;
 
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class AimAtMouse : MonoBehaviour
         mousePos = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         Vector3 difference = mousePos - player.transform.position;
 
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 
         float distance = difference.magnitude;
@@ -34,8 +35,13 @@ public class AimAtMouse : MonoBehaviour
         gameObject.transform.position = player.transform.position + new Vector3(direction.x, direction.y) * objDistFromPlayer;
     }
 
-    public Vector2 GetDirection()
+    public Vector3 GetDirection()
     {
         return direction;
+    }
+
+    public float GetZRotation()
+    {
+        return rotationZ;
     }
 }

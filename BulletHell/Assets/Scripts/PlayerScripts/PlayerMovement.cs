@@ -70,10 +70,11 @@ public class PlayerMovement : MonoBehaviour
             case (PlayerState.Dash):
                 bullets = GameObject.FindGameObjectsWithTag("Bullet");
 
-                for (int i = 0; i < bullets.Length; i++)
+                //'Invul frames'
+                /*for (int i = 0; i < bullets.Length; i++)
                 {
                     Physics2D.IgnoreCollision(coll, bullets[i].GetComponent<BoxCollider2D>());
-                }
+                }*/
 
                 transform.position += dir * dashSpeed * Time.deltaTime;
                 dashSpeed -= dashSpeed * 10f * Time.deltaTime;
@@ -127,5 +128,15 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.position += dir * stateSpeed * Time.deltaTime;
     }
+
+    public Vector3 GetDirection()
+    {
+        return dir;
+    }
+
+    public LayerMask GetWallLayers() {
+        return wallLayer;
+    }
+
 
 }
