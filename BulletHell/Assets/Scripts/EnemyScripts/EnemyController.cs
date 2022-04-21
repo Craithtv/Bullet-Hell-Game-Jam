@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public int enemyHp;
     public GameObject healthPickUp;
     const float dropChance = 1f / 2f;
-    public Bullet bulletScript;
+    Bullet bulletScript;
 
 
     public GameObject door;
@@ -51,11 +51,13 @@ public class EnemyController : MonoBehaviour
         if (collision.tag == "PlayerBullet")
         {
 
-            bulletScript = GameObject.Find("PlayerBullet(Clone)").GetComponent<Bullet>();
+            bulletScript = collision.GetComponent<Bullet>();
 
             enemyHp -= bulletScript.playerBulletDamage;
             Debug.Log("EnemyHit");
-            Destroy(collision.gameObject);
+
+            if(!bulletScript.GetLaserBool())
+                Destroy(collision.gameObject);
             
         }
     }
