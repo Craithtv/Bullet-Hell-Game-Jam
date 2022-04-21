@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6748122833675214328}
   - component: {fileID: 2115435972152788801}
   - component: {fileID: -3052262561698923530}
+  - component: {fileID: 7822138405233606635}
   m_Layer: 0
   m_Name: VerticalDoor
   m_TagString: Untagged
@@ -104,3 +105,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7822138405233606635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102634829294361059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17390f82bf02f541b5fd5e72716f6da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesLeft: 0
+  enemies: []
