@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     float rageTimer;
 
     public GameObject [] healthBar;
+    public GameObject[] rageBar;
 
     
 
@@ -33,12 +34,18 @@ public class Player : MonoBehaviour
             obj.SetActive(false);
         }
         healthBar[0].SetActive(true);
+
+        foreach(GameObject obj in rageBar)
+        {
+            obj.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         bulletTimer -= Time.deltaTime;
+
 
         if(rageCounter >= 3 && Input.GetKeyDown(KeyCode.E))
         {
@@ -58,6 +65,20 @@ public class Player : MonoBehaviour
                 rageActive = false;
             }
         }
+        else
+        {
+            for (int i = 0; i < rageBar.Length; i++)
+            {
+                if (i != rageCounter)
+                {
+                    rageBar[i].SetActive(false);
+                }
+                else
+                {
+                    rageBar[i].SetActive(true);
+                }
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -66,8 +87,9 @@ public class Player : MonoBehaviour
         {
             hp -= 1;
 
-            if (rageActive == false)
+            if (rageActive == false && rageCounter < 3)
                 rageCounter += 1;
+
 
             Debug.Log("Hit");
             bulletTimer = bulletCooldown;
