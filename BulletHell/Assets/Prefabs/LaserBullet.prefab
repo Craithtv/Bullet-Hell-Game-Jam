@@ -101,7 +101,7 @@ MonoBehaviour:
   speed: 0
   rotation: 0
   playerBulletDamage: 8
-  isLaser: 0
+  isPlayerLaser: 1
   wallLayers:
     serializedVersion: 2
     m_Bits: 0
