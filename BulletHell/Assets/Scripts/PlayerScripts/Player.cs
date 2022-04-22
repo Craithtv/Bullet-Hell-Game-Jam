@@ -59,11 +59,26 @@ public class Player : MonoBehaviour
             if(rageTimer > 0)
             {
                 rageTimer -= Time.deltaTime;
+
+                for(int i = 0; i < rageCounter; i++)
+                {
+                    if(i != (int)rageTimer / 3)
+                    {
+                        rageBar[i].SetActive(false);
+                    }
+                    else
+                    {
+                        rageBar[i].SetActive(true);
+                    }
+                }
             }
             else
             {
                 rageActive = false;
             }
+
+
+
         }
         else
         {
