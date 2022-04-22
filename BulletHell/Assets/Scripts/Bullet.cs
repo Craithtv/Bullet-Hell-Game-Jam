@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public float rotation;
     public int playerBulletDamage;
 
-    public bool isLaser;
+    public bool isPlayerLaser;
     SpriteRenderer bulletRender;
 
     public LayerMask wallLayers;
@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(velocity * speed * Time.deltaTime);
 
-        if (isLaser)
+        if (isPlayerLaser)
         {
             bulletRender.color -= new Color(0f, 0f, 0f, Time.deltaTime);
             if(bulletRender.color.a <= 0f)
@@ -48,6 +48,6 @@ public class Bullet : MonoBehaviour
 
     public bool GetLaserBool()
     {
-        return isLaser;
+        return isPlayerLaser;
     }
 }
