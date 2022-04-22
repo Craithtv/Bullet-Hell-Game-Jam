@@ -41,6 +41,7 @@ public class AttackTest : MonoBehaviour
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
                         enemiesToDamage[i].GetComponent<EnemyController>().enemyHp -= damage;
+                        enemiesToDamage[i].GetComponent<EnemyController>().anim.CrossFadeInFixedTime("enemyDamage", 0);
                     }
 
                 }

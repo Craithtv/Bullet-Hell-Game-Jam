@@ -3478,7 +3478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2862172142035289621, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
       propertyPath: startHp
-      value: 100
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2862172142035289621, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
       propertyPath: youDiedScreen
@@ -3526,7 +3526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2862172142035289622, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.4
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 2862172142035289622, guid: ca84cf9674b92834b88653b33a1c6073, type: 3}
       propertyPath: m_LocalPosition.z
