@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     public Canvas youDiedScreen;
 
     bool rageActive;
-    int rageCounter;
+    int currRageCounter;
+    int maxRageCounter;
     float rageTimer;
 
     public GameObject [] healthBar;
@@ -26,7 +27,8 @@ public class Player : MonoBehaviour
         Time.timeScale = 1;
         hp = startHp;
 
-        rageCounter = 0;
+        currRageCounter = 0;
+        maxRageCounter = 4;
         rageActive = false;
 
         foreach(GameObject obj in healthBar)
@@ -47,10 +49,13 @@ public class Player : MonoBehaviour
     {
         bulletTimer -= Time.deltaTime;
 
-
-        if(rageCounter >= 4 && Input.GetKeyDown(KeyCode.E))
+        if(currRageCounter >= maxRageCounter && Input.GetKeyDown(KeyCode.E))
         {
-            rageCounter = 0;
+            for (int i = 0; i < maxRageCounter+1; i++){
+                rageBar[i].SetActive(false);
+            }
+
+            currRageCounter = 0;
             rageTimer = 8f;
             rageActive = true;
         }
@@ -62,13 +67,13 @@ public class Player : MonoBehaviour
 
                 rageTimer -= Time.deltaTime;
 
-                for (int i = rageBar.Length - 1; i >= 0; i--)
+                for (int i = maxRageCounter+1; i < rageBar.Length; i++)
                 {
-                    if ((int)rageTimer/2 >= i-1)
+                    if ((int)(maxRageCounter+1 + (maxRageCounter - rageTimer/2)) == i)
                     {
                         rageBar[i].SetActive(true);
                     }
-                    
+
 
                     else
                     {
@@ -76,17 +81,10 @@ public class Player : MonoBehaviour
                     }
                 }
 
-              
+
             }
             else
             {
-                //For if using individual sprites
-                /*for(int i = 0; i < rageBar.Length; i++)
-                {
-                    rageBar[i].SetActive(false);
-                }*/
-
-
                 rageActive = false;
             }
 
@@ -97,9 +95,10 @@ public class Player : MonoBehaviour
         {
             
             //For Full rage bar sprite
-            for (int i = 0; i < rageBar.Length; i++)
+            //maxRageCounter+1 to make sure max rage is still drawn since there is x+1 number of bar sprites for filling (due to empty bar)
+            for (int i = 0; i < maxRageCounter+1; i++)
             {
-                if (i != rageCounter)
+                if (i != currRageCounter)
                 {
                     rageBar[i].SetActive(false);
                 }
@@ -108,16 +107,6 @@ public class Player : MonoBehaviour
                     rageBar[i].SetActive(true);
                 }
             }
-
-
-            //For Individual rage bar sprites
-            /*for (int i = 0; i < rageBar.Length; i++)
-            {
-                if(i == rageCounter)
-                {
-                    rageBar[i].SetActive(true);
-                }
-            }*/
         }
     }
 
@@ -127,8 +116,8 @@ public class Player : MonoBehaviour
         {
             hp -= 1;
 
-            if (rageActive == false && rageCounter < 4)
-                rageCounter += 1;
+            if (rageActive == false && currRageCounter < maxRageCounter)
+                currRageCounter += 1;
 
 
             Debug.Log("Hit");
