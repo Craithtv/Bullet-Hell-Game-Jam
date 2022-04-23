@@ -82,8 +82,7 @@ public class AttackTest : MonoBehaviour
 
                     playerBullet.GetComponent<Bullet>().rotation =  90f + aimAtMouse.GetZRotation();
 
-                    playerBullet.transform.localScale = new Vector3(playerBullet.transform.localScale.x, rayHit.distance/2);
-                    //playerBullet.transform.localScale = new Vector3(rayHit.distance, playerBullet.transform.localScale.y);
+                    playerBullet.transform.localScale = new Vector3(playerBullet.transform.localScale.x, playerBullet.transform.localScale.y * rayHit.distance/2);
                 }
             }
 

@@ -14,13 +14,14 @@ public class EnemyController : MonoBehaviour
     public GameObject door;
     private Door doorScript;
 
-
+    private BulletSpawner bulletSpawner;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyHp = enemystartHp;
         anim = gameObject.GetComponent<Animator>();
+        bulletSpawner = GetComponent<BulletSpawner>();
 
         doorScript = door.GetComponent<Door>();
 
@@ -43,6 +44,32 @@ public class EnemyController : MonoBehaviour
             doorScript.enemiesLeft--;
             Destroy(gameObject);
         }
+
+
+        /*//Bottom Left of player
+        if(transform.position.x < bulletSpawner.GetTargetPos().x && transform.position.y < bulletSpawner.GetTargetPos().y)
+        {
+            anim.Play("enemyRunLeft");
+        }
+
+        //Bottom Right of player
+        else if (transform.position.x > bulletSpawner.GetTargetPos().x && transform.position.y < bulletSpawner.GetTargetPos().y)
+        {
+            anim.Play("enemyRunDown");
+        }
+
+        //Top Left of player
+        else if (transform.position.x < bulletSpawner.GetTargetPos().x && transform.position.y > bulletSpawner.GetTargetPos().y)
+        {
+            anim.Play("enemyRunUp");
+        }
+
+        //Last case; Top Right of player
+        else
+        {
+            anim.Play("enemyRunRight");
+        }*/
+
     }
 
 
