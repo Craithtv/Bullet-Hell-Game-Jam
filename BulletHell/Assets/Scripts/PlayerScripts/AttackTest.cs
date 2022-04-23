@@ -41,7 +41,6 @@ public class AttackTest : MonoBehaviour
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
                         enemiesToDamage[i].GetComponent<EnemyController>().enemyHp -= damage;
-                        enemiesToDamage[i].GetComponent<EnemyController>().anim.CrossFadeInFixedTime("enemyDamage", 0);
                     }
 
                 }
@@ -78,10 +77,12 @@ public class AttackTest : MonoBehaviour
                     RaycastHit2D rayHit = Physics2D.Raycast(transform.position, aimAtMouse.GetDirection(), Mathf.Infinity, GetComponent<PlayerMovement>().GetWallLayers());
 
                     rangedTimeBtwAttack = startTimeBtwAttack;
-                    GameObject playerBullet = Instantiate(playerLaserPrefab, (transform.position + aimAtMouse.GetDirection() * rayHit.distance / 2), Quaternion.Euler(Vector3.zero));
-                    playerBullet.GetComponent<Bullet>().rotation = aimAtMouse.GetZRotation();
-                    
-                    playerBullet.transform.localScale = new Vector3(rayHit.distance, playerBullet.transform.localScale.y);
+                    GameObject playerBullet = Instantiate(playerLaserPrefab, (transform.position + aimAtMouse.GetDirection() * rayHit.distance/2), Quaternion.Euler(Vector3.zero));
+
+                    playerBullet.GetComponent<Bullet>().rotation =  90f + aimAtMouse.GetZRotation();
+
+                    playerBullet.transform.localScale = new Vector3(playerBullet.transform.localScale.x, rayHit.distance/2);
+                    //playerBullet.transform.localScale = new Vector3(rayHit.distance, playerBullet.transform.localScale.y);
                 }
             }
 

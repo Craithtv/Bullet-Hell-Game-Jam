@@ -1168,7 +1168,7 @@ PrefabInstance:
       objectReference: {fileID: 1452669006}
     - target: {fileID: 2283272563928155617, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
       propertyPath: enemystartHp
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2283272563928155620, guid: 3e2d743f5b629ec45b8423d57a17de1d, type: 3}
       propertyPath: target

@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         {
             obj.SetActive(false);
         }
+        rageBar[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -47,10 +48,10 @@ public class Player : MonoBehaviour
         bulletTimer -= Time.deltaTime;
 
 
-        if(rageCounter >= 3 && Input.GetKeyDown(KeyCode.E))
+        if(rageCounter >= 4 && Input.GetKeyDown(KeyCode.E))
         {
             rageCounter = 0;
-            rageTimer = 10f;
+            rageTimer = 8f;
             rageActive = true;
         }
 
@@ -58,22 +59,34 @@ public class Player : MonoBehaviour
         {
             if(rageTimer > 0)
             {
+
                 rageTimer -= Time.deltaTime;
 
-                for(int i = 0; i < rageCounter; i++)
+                for (int i = rageBar.Length - 1; i >= 0; i--)
                 {
-                    if(i != (int)rageTimer / 3)
-                    {
-                        rageBar[i].SetActive(false);
-                    }
-                    else
+                    if ((int)rageTimer/2 >= i-1)
                     {
                         rageBar[i].SetActive(true);
                     }
+                    
+
+                    else
+                    {
+                        rageBar[i].SetActive(false);
+                    }
                 }
+
+              
             }
             else
             {
+                //For if using individual sprites
+                /*for(int i = 0; i < rageBar.Length; i++)
+                {
+                    rageBar[i].SetActive(false);
+                }*/
+
+
                 rageActive = false;
             }
 
@@ -82,6 +95,8 @@ public class Player : MonoBehaviour
         }
         else
         {
+            
+            //For Full rage bar sprite
             for (int i = 0; i < rageBar.Length; i++)
             {
                 if (i != rageCounter)
@@ -93,6 +108,16 @@ public class Player : MonoBehaviour
                     rageBar[i].SetActive(true);
                 }
             }
+
+
+            //For Individual rage bar sprites
+            /*for (int i = 0; i < rageBar.Length; i++)
+            {
+                if(i == rageCounter)
+                {
+                    rageBar[i].SetActive(true);
+                }
+            }*/
         }
     }
 
@@ -102,7 +127,7 @@ public class Player : MonoBehaviour
         {
             hp -= 1;
 
-            if (rageActive == false && rageCounter < 3)
+            if (rageActive == false && rageCounter < 4)
                 rageCounter += 1;
 
 
