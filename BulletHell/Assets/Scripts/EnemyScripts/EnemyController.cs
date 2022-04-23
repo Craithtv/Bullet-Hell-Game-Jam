@@ -54,6 +54,7 @@ public class EnemyController : MonoBehaviour
             bulletScript = collision.GetComponent<Bullet>();
 
             enemyHp -= bulletScript.playerBulletDamage;
+            anim.CrossFadeInFixedTime("turretDamage", 0);
             anim.CrossFadeInFixedTime("enemyDamage", 0);
             Debug.Log("EnemyHit");
 
