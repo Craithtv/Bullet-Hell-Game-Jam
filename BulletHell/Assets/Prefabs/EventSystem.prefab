@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326eb102ef7ada147856c55fb4cd539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quitButtonMenu: {fileID: 0}
-  settingsButtonMenu: {fileID: 0}
-  pauseButtonMenu: {fileID: 0}
+  quitButtonMenu: {fileID: 2498638958845253911, guid: 1ea4bcfd3395a1047b6a8b4b334c1c19, type: 3}
+  settingsButtonMenu: {fileID: 5280978613549187107, guid: c3a97d18a48f34c4b9f91c2f21cdd9b3, type: 3}
+  pauseButtonMenu: {fileID: 6016043856533654110, guid: b8a26be9f7c0c9c479ebb45e98721030, type: 3}
+  mainSong: {fileID: 0}
