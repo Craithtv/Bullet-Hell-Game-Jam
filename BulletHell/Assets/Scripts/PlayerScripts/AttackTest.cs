@@ -43,6 +43,7 @@ public class AttackTest : MonoBehaviour
                     {
                         enemiesToDamage[i].GetComponent<EnemyController>().enemyHp -= damage;
                         punchPC.Play();
+                        enemiesToDamage[i].GetComponent<EnemyController>().anim.CrossFadeInFixedTime("turretDamage", 0);
                         enemiesToDamage[i].GetComponent<EnemyController>().anim.CrossFadeInFixedTime("enemyDamage", 0);
                     }
 
