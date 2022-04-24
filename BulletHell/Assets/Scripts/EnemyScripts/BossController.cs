@@ -10,7 +10,7 @@ public class BossController : MonoBehaviour
     Bullet bulletScript;
 
     public Animator anim;
-
+    public AudioSource mainSong;
 
     
     
@@ -22,7 +22,7 @@ public class BossController : MonoBehaviour
     {
         enemyHp = enemystartHp;
         anim = gameObject.GetComponent<Animator>();
-        
+        mainSong.Stop();
         
 
     }
@@ -31,7 +31,8 @@ public class BossController : MonoBehaviour
     void Update()
     {
         if (enemyHp <= 0)
-        { 
+        {
+            mainSong.Play();
             Destroy(gameObject);
         }
 
