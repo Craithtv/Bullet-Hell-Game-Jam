@@ -101,4 +101,9 @@ public class BulletSpawner : MonoBehaviour
         }
         return spawnedBullets;
     }
+
+    public Vector3 GetTargetPos()
+    {
+        return target.transform.position;
+    }
 }
