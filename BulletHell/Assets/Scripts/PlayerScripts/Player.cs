@@ -18,7 +18,13 @@ public class Player : MonoBehaviour
     public GameObject [] healthBar;
     public GameObject[] rageBar;
 
+    public AudioSource healthPickUp;
     
+    public AudioSource rageStart;
+    
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +63,7 @@ public class Player : MonoBehaviour
 
             currRageCounter = 0;
             rageTimer = 8f;
+            rageStart.Play();
             rageActive = true;
         }
 
@@ -135,6 +142,7 @@ public class Player : MonoBehaviour
 
         if (collision.tag == "Health" && hp <=5)
         {
+            healthPickUp.Play();
             hp++;
             Destroy(collision.gameObject);
         }

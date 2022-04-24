@@ -17,6 +17,7 @@ public class AttackTest : MonoBehaviour
     public AimAtMouse aimAtMouse;
     public GameObject playerBulletPrefab;
     public GameObject playerLaserPrefab;
+    public AudioSource punchPC;
 
 
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class AttackTest : MonoBehaviour
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
                         enemiesToDamage[i].GetComponent<EnemyController>().enemyHp -= damage;
+                        punchPC.Play();
                         enemiesToDamage[i].GetComponent<EnemyController>().anim.CrossFadeInFixedTime("enemyDamage", 0);
                     }
 

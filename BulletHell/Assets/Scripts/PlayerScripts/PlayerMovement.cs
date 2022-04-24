@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 playerDir;
 
+    public AudioSource dashPC;
+
     enum PlayerState
     {
         Normal,
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
                     playerState = PlayerState.Rage;
                 if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0 && CanMove())
                 {
+                    dashPC.Play();
                     dashCooldown = 0.5f;
                     playerState = PlayerState.Dash;
                 }
@@ -95,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
                     playerState = PlayerState.Normal;
                 if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0 && CanMove())
                 {
+                    dashPC.Play();
                     dashCooldown = 0.3f;
                     playerState = PlayerState.Dash;
                 }
