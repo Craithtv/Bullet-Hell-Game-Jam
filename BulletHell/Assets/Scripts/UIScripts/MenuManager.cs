@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
    public Canvas settingsButtonMenu;
    public Canvas pauseButtonMenu;
     public AudioSource mainSong;
+    public AudioSource bossSong;
    
    
    private void Awake()
@@ -28,14 +29,18 @@ public class MenuManager : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseButtonMenu.GetComponent<Canvas>().enabled = true;
-            mainSong.Stop();
+            mainSong.Pause();
+            if (bossSong != null)
+                bossSong.Pause();
             menuOpen = true;
             Debug.Log("Key Detected");
         }
     else if(Input.GetKeyDown(KeyCode.Escape) && menuOpen == true)
         {
             Time.timeScale = 1;
-            mainSong.Play();
+            if(bossSong != null)
+                bossSong.UnPause();
+            mainSong.UnPause();
             pauseButtonMenu.GetComponent<Canvas>().enabled = false;
             settingsButtonMenu.GetComponent<Canvas>().enabled = false;
             quitButtonMenu.GetComponent<Canvas>().enabled = false;
