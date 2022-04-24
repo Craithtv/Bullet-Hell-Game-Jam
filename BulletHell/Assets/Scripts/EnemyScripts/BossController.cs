@@ -35,7 +35,8 @@ public class BossController : MonoBehaviour
             mainSong.Play();
             Destroy(gameObject);
         }
-
+        else
+            mainSong.Stop();
        
 
     }
