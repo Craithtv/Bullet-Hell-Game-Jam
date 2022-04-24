@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61c578bf7f01434d946cc9a7e82359f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 1, y: 0}
+  velocity: {x: 0, y: 0}
   speed: 3
   rotation: 0
   playerBulletDamage: 1
