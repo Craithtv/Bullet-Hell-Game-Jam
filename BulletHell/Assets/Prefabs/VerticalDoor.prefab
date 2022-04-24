@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2115435972152788801}
   - component: {fileID: -3052262561698923530}
   - component: {fileID: 1673692122}
-  - component: {fileID: 1673692123}
+  - component: {fileID: 9150768087001057268}
   m_Layer: 6
   m_Name: VerticalDoor
   m_TagString: LockedDoor
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21875, y: 1}
   m_EdgeRadius: 0.075
---- !u!114 &1673692123
+--- !u!114 &9150768087001057268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,5 +144,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17390f82bf02f541b5fd5e72716f6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesLeft: 1
+  enemiesLeft: 0
   enemies: []
