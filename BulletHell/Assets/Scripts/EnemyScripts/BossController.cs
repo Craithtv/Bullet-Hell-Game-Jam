@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class BossController : MonoBehaviour
     public Animator anim;
     public AudioSource mainSong;
 
-    
+    public Canvas Victory;
     
 
 
@@ -23,7 +24,8 @@ public class BossController : MonoBehaviour
         enemyHp = enemystartHp;
         anim = gameObject.GetComponent<Animator>();
         mainSong.Stop();
-        
+        Victory.GetComponent<Canvas>().enabled = false;
+
 
     }
 
@@ -33,6 +35,9 @@ public class BossController : MonoBehaviour
         if (enemyHp <= 0)
         {
             mainSong.Play();
+            Victory.GetComponent<Canvas>().enabled = true;
+            Time.timeScale = 0;
+
             Destroy(gameObject);
         }
         else
