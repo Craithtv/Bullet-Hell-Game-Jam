@@ -60,12 +60,18 @@ public class podTutorial : MonoBehaviour
         {
 
             enemyDialog1.GetComponent<Canvas>().enabled = false;         
-            Time.timeScale = 1;
+            
             
             if(hasTalked == false)
             {
                 pcDialog1.GetComponent<Canvas>().enabled = true;
                 hasTalked = true;
+            }
+            else if (hasTalked == true)
+            {
+                pcDialog1.GetComponent<Canvas>().enabled = false;
+                Time.timeScale = 1;
+
             }
             else
             {

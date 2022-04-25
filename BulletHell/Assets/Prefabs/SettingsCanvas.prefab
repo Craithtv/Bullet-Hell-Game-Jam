@@ -347,7 +347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11, y: -27}
+  m_AnchoredPosition: {x: -10.999939, y: -27.000015}
   m_SizeDelta: {x: -249.7343, y: -78.7958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3394643074098896861
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9339623, g: 0.074893214, b: 0.074893214, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 3961519741560914787}
   toggleTransition: 1
-  graphic: {fileID: 0}
+  graphic: {fileID: 5280978613804588611}
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
@@ -2006,8 +2006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.77789, y: -4.365692}
-  m_SizeDelta: {x: 237.634, y: 237.2514}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 497.7865, y: 259.6569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5280978614590046256
 CanvasRenderer:
@@ -2142,7 +2142,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9811321, g: 0.09718761, b: 0.09718761, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 8786890083436694839}
   toggleTransition: 1
-  graphic: {fileID: 0}
+  graphic: {fileID: 5280978613804588611}
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
@@ -2528,7 +2528,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9150943, g: 0.030215396, b: 0.030215396, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2548,7 +2548,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 471216316393418691}
   toggleTransition: 1
-  graphic: {fileID: 0}
+  graphic: {fileID: 5280978613804588611}
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
